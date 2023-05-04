@@ -1,0 +1,20 @@
+{
+  "name": "cohoi",
+  "private": "true",
+  "scripts": {
+    "check": "npm run check --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "dev": "concurrently npm:dev:*",
+    "dev:client": "npm run dev --workspace=@cohoi/client",
+    "dev:server": "npm run dev --workspace=@cohoi/server"
+  },
+  "workspaces": [
+    "packages/client",
+    "packages/server",
+    "packages/common"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
