@@ -9,14 +9,12 @@ interface Props {
 export default function Item(props: Props) {
   return (
     <>
-      <img src={props.item.thumbnail} />
-      <div>Name:{props.item.name}</div>
-      <div>{props.item.size}</div>
-      <div>Artist: {props.item.artist}</div>
-      <div>Genre: {props.item.genre}</div>
-      <div>External page: {props.item.itemPageURL}</div>
-      <AudioPlayer src={props.item.URL} />
-      <a href={props.item.URL} download>
+      <img src={props.item.itemImageURL} />
+      <div>Name:{props.item.itemMetadata.creator}</div>
+      <div>Description: {props.item.itemMetadata.description}</div>
+      <div>External page: {props.item.itemBasePageURL}</div>
+      <AudioPlayer src={props.item.trackDownloadURL} />
+      <a href={props.item.trackDownloadURL} download>
         Download
       </a>
     </>
